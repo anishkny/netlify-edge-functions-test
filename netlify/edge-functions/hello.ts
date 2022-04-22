@@ -1,5 +1,5 @@
-import type { Context } from "netlify:edge";
+import type { Context } from "https://edge-bootstrap.netlify.app/v1/index.ts";
 
-export default async (request: Request, context: Context): Promise<Response> => {
-  return new Response("Hello, world!");
+export default (_request: Request, context: Context): Response => {
+  return context.json(context.geo);
 };
