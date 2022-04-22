@@ -1,5 +1,8 @@
 {
   "deno.enable": true,
   "deno.lint": true,
-  "deno.unstable": false
+  "deno.unstable": false,
+  "deno.enablePaths": ["netlify/edge-functions"],
+  "deno.importMap": ".netlify/edge-functions-import-map.json",
+  "deno.path": "/Users/anish/Library/Preferences/netlify/deno-cli/deno"
 }

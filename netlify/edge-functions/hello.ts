@@ -1,5 +1,15 @@
-import type { Context } from "https://edge-bootstrap.netlify.app/v1/index.ts";
+import type { Context } from "netlify:edge";
 
 export default (_request: Request, context: Context): Response => {
-  return context.json(context.geo);
+  const res = `${
+    JSON.stringify(
+      {
+        geo: context.geo,
+        env: Deno.env.toObject(),
+      },
+      null,
+      2,
+    )
+  }`;
+  return new Response(res);
 };
